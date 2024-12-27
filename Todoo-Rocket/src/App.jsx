@@ -11,7 +11,7 @@ function App() {
        <Header />
       </div>
       <section>
-        <div style={{ display: "flex", justifyContent: "center", gap: "1rem" }}>
+        <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginTop: "-2rem" }}>
           <Input />
           <Button />
         </div>
