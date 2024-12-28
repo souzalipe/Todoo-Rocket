@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    justify-content: space-evenly  
+}
+
+.createdTaskContainer {
+    gap: 1rem;
+    color: var(--purple);
+}
+
+.completedTaskContainer {
+  gap: 1rem;
+  color: var(--purple);
+}
+
