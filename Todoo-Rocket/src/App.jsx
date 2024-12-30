@@ -30,11 +30,11 @@ function App() {
         <Header />
       </div>
       <main>
-        {tasks.map((task) => {
+        {/* {tasks.map((task) => {
           return (
             
           );
-        })}
+        })} */}
         <div>
           <Post />
         </div>
