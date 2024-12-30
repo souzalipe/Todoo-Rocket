@@ -5,17 +5,40 @@ import { Post } from "./components/Post";
 
 import "./styles/global.css";
 
+const tasks = [
+  {
+    id: 1,
+    title: "Estudar React",
+    completed: false,
+  },
+  {
+    id: 2,
+    title: "Estudar CSS",
+    completed: true,
+  },
+  {
+    id: 3,
+    title: "Estudar HTML",
+    completed: false,
+  },
+];
+
 function App() {
   return (
     <main>
       <div>
         <Header />
       </div>
-      <section>
+      <main>
+        {tasks.map((task) => {
+          return (
+            
+          );
+        })}
         <div>
           <Post />
         </div>
-      </section>
+      </main>
     </main>
   );
 }

@@ -1,12 +1,13 @@
 .header {
     display: flex;
-    justify-content: space-evenly  
+    justify-content: space-evenly ;
+    margin-top: 5rem;
 }
 
 .createdTaskContainer {
     gap: 1rem;
     color: var(--purple);
-}
+} 
 
 .completedTaskContainer {
   gap: 1rem;
