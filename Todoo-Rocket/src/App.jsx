@@ -2,6 +2,7 @@ import { Button } from "./components/Button";
 import { Header } from "./components/Header";
 import { Input } from "./components/Input";
 import { Post } from "./components/Post";
+import { Task } from "./components/Task";
 
 import "./styles/global.css";
 
@@ -30,14 +31,14 @@ function App() {
         <Header />
       </div>
       <main>
-        {/* {tasks.map((task) => {
-          return (
-            
-          );
-        })} */}
         <div>
           <Post />
         </div>
+        {tasks.map((task) => {  /*aqui vou retornar o componente Task */
+          return (
+            <Task/>
+          );
+        })}
       </main>
     </main>
   );
