@@ -1,6 +1,5 @@
 import React from "react";
 import style from "../styles/task.module.css";
-
 import { Trash } from "phosphor-react";
 
 export function Task() {
@@ -13,10 +12,9 @@ export function Task() {
                 />
                 <p>Estudar React</p>
                 <button>
-                    <Trash size={16} />
+                    <Trash  className={style.button} size={12}  style={{height:"1.5rem", width: "1.5rem" }}/>
                 </button>
             </div>
-           
         </div>
     );
 }

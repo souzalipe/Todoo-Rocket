@@ -50,4 +50,22 @@
     border: 2px solid var(--purple);
     background-color: var(--purple);
 }
-  
+
+button:hover {
+    color: var(--danger);
+    transition: 0.5s;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    color: var(--gray-400);
+    cursor: pointer;
+    
+
+
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+}
+
