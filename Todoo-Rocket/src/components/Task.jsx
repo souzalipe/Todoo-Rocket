@@ -3,11 +3,11 @@ import style from "../styles/task.module.css";
 
 import { Trash } from "phosphor-react";
 
-export function Task({ id , title }) {
+export function Task({ id , title, completed }) {
   return (
     <div className={style.conteiner}>
       <div className={style.content}>
-        <input type="checkbox" className={style.checkbox} />
+        <input type="checkbox" className={style.checkbox} status={completed}  />
         <p id={id}>
           {title}
         </p>

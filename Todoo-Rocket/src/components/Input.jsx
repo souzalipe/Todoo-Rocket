@@ -6,7 +6,7 @@ export function Input({completed}) {
     <input
       className={styles.container}
       placeholder="Adicione uma nova tarefa"
-      status={completed}
+   
     />
   );
 }
