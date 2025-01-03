@@ -35,17 +35,6 @@ function App() {
           <Post />
         </div>
       </section>
-      <section>
-        <div>
-          {tasks.map((task) => (
-            <Task 
-              key={task.id}
-              title={task.title}
-              completed={task.completed}
-            />
-          ))}
-        </div>
-      </section>
     </main>
   );
 }

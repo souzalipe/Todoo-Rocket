@@ -3,13 +3,13 @@ import style from "../styles/task.module.css";
 
 import { Trash } from "phosphor-react";
 
-export function Task({ id , title, completed }) {
+export function Task({ id , content, completed }) {
   return (
     <div className={style.conteiner}>
       <div className={style.content}>
         <input type="checkbox" className={style.checkbox} status={completed}  />
-        <p id={id}>
-          {title}
+        <p>
+          {content}
         </p>
         <button >
           <Trash
@@ -19,6 +19,8 @@ export function Task({ id , title, completed }) {
           />
         </button>
       </div>
+
+
     </div>
   );
 }

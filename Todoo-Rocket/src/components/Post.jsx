@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Input } from "./Input";
 import { Button } from "./Button";
@@ -8,9 +8,24 @@ import style from "../styles/Post.module.css";
 
 
 export function Post() {
+
+  const [ tasks, setTaks ] = useState(["estudadar matemática"])
+
+  function handleCreateNewTask() { 
+    event.preventDefault(); /*  <== Evita que a página recarregue ao enviar o formulário */
+
+    // console.log(event.target.chore.value)
+
+    setTaks([...tasks, tasks.length + 1]) /* <== Imutabilidade */
+
+
+  }
+
+
+
   return (
     <article>
-      <form>
+      <form onSubmit={handleCreateNewTask}>
         <div
           style={{
             display: "flex",
@@ -35,7 +50,15 @@ export function Post() {
           </div>
         </div>
       </header>
-
+      <section>
+        <div>
+          {tasks.map((task) => (
+            <Task 
+              content={task}
+            />
+          ))}
+        </div>
+      </section>
     </article>
   );
 }
