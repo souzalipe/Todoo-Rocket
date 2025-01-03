@@ -9,18 +9,18 @@ import "./styles/global.css";
 const tasks = [
   {
     id: 1,
-    title: "Estudar React",
-    completed: false,
+    title: "task 1",
+    completed: 'true',
   },
   {
     id: 2,
-    title: "Estudar CSS",
-    completed: true,
+    title:  "task 2",
+    completed: 'true',
   },
   {
     id: 3,
-    title: "Estudar HTML",
-    completed: false,
+    title:  "task 3",
+    completed: 'true',
   },
 ];
 
@@ -30,16 +30,22 @@ function App() {
       <div>
         <Header />
       </div>
-      <main>
+      <section>
         <div>
           <Post />
         </div>
-        {tasks.map((task) => {  /*aqui vou retornar o componente Task */
-          return (
-            <Task/>
-          );
-        })}
-      </main>
+      </section>
+      <section>
+        <div>
+          {tasks.map((task) => (
+            <Task 
+              key={task.id}
+              title={task.title}
+              completed={task.completed}
+            />
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

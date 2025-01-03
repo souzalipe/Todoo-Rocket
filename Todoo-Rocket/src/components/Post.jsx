@@ -1,8 +1,11 @@
 import React from "react";
+
 import { Input } from "./Input";
 import { Button } from "./Button";
+import { Task } from "./Task"
 
 import style from "../styles/Post.module.css";
+
 
 export function Post() {
   return (
@@ -21,9 +24,9 @@ export function Post() {
         </div>
       </form>
 
-      <header >
+      <header>
         <div className={style.header}>
-          <div className={style.createdTaskContainer} >
+          <div className={style.createdTaskContainer}>
             <h3>Tarefas criadas</h3>
           </div>
 
@@ -33,7 +36,6 @@ export function Post() {
         </div>
       </header>
 
-      <div></div>
     </article>
   );
 }
