@@ -5,22 +5,22 @@ import { Button } from "./Button";
 import { Task } from "./Task";
 
 import style from "../styles/Post.module.css";
+import styles from "../styles/Input.module.css";
 
-export function Post({ handleNewCommentChange}) {
+export function Post() {
   const [tasks, setTaks] = useState(["estudadar matemática"]);
 
-  const [newCommentText, setNewCommentText] = useState(""); 
+  const [newCommentText, setNewCommentText] = useState("");
 
   function handleCreateNewTask() {
     event.preventDefault(); /*  <== Evita que a página recarregue ao enviar o formulário */
-
-    const NewCommentText = event.target.input.value /* <== pegando o valor do input e armazenando em uma variável */;
-
-    setTaks([...tasks, NewCommentText]); /* <== Imutabilidade */
-
-    event.target.input.value = ""; /* <== limpando o input */
+    setTaks([...tasks, newCommentText]); /* <== Imutabilidade */
+    setNewCommentText(""); /* <== Limpa o input */
   }
 
+  function handleNewTaskChange() {
+    setNewCommentText(event.target.value);
+  }
 
   return (
     <article>
@@ -33,7 +33,14 @@ export function Post({ handleNewCommentChange}) {
             marginTop: "-2rem",
           }}
         >
-          <Input />
+          {/* <Input /> */}
+          <input
+            name="input"
+            value={newCommentText}
+            className={styles.container}
+            placeholder="Adicione uma nova tarefa"
+            onChange={handleNewTaskChange}
+          />
           <Button />
         </div>
       </form>
