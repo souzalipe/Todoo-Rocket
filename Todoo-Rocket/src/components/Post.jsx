@@ -2,25 +2,24 @@ import React, { useState } from "react";
 
 import { Input } from "./Input";
 import { Button } from "./Button";
-import { Task } from "./Task"
+import { Task } from "./Task";
 
 import style from "../styles/Post.module.css";
 
+export function Post({ handleNewCommentChange}) {
+  const [tasks, setTaks] = useState(["estudadar matemática"]);
 
-export function Post() {
+  const [newCommentText, setNewCommentText] = useState(""); 
 
-  const [ tasks, setTaks ] = useState(["estudadar matemática"])
-
-  function handleCreateNewTask() { 
+  function handleCreateNewTask() {
     event.preventDefault(); /*  <== Evita que a página recarregue ao enviar o formulário */
 
-    // console.log(event.target.chore.value)
+    const NewCommentText = event.target.input.value /* <== pegando o valor do input e armazenando em uma variável */;
 
-    setTaks([...tasks, tasks.length + 1]) /* <== Imutabilidade */
+    setTaks([...tasks, NewCommentText]); /* <== Imutabilidade */
 
-
+    event.target.input.value = ""; /* <== limpando o input */
   }
-
 
 
   return (
@@ -53,9 +52,7 @@ export function Post() {
       <section>
         <div>
           {tasks.map((task) => (
-            <Task 
-              content={task}
-            />
+            <Task content={task} />
           ))}
         </div>
       </section>
