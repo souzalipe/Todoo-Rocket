@@ -61,8 +61,8 @@ export function Post({id}) {
       </header>
       <section>
         <div key={id}>
-          {tasks.map((task, index ) => (
-            <Task key={index} content={task} />
+          {tasks.map((task, key ) => (
+            <Task key={key} content={task} />
           ))}
         </div>
       </section>
