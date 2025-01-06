@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 
-import { Input } from "./Input";
 import { Button } from "./Button";
 import { Task } from "./Task";
 
 import style from "../styles/Post.module.css";
 import styles from "../styles/Input.module.css";
 
-export function Post() {
-  const [tasks, setTaks] = useState(["estudadar matemática"]);
+
+export function Post({id}) {
+
+  const [tasks, setTaks] = useState(["Estudar Matemática"]);
 
   const [newCommentText, setNewCommentText] = useState("");
 
@@ -36,7 +37,9 @@ export function Post() {
           {/* <Input /> */}
           <input
             name="input"
-            value={newCommentText}
+            value={
+              newCommentText
+            } /*<== o valor do input é controlado pelo estado */
             className={styles.container}
             placeholder="Adicione uma nova tarefa"
             onChange={handleNewTaskChange}
@@ -57,9 +60,9 @@ export function Post() {
         </div>
       </header>
       <section>
-        <div>
-          {tasks.map((task) => (
-            <Task content={task} />
+        <div key={id}>
+          {tasks.map((task, index ) => (
+            <Task key={index} content={task} />
           ))}
         </div>
       </section>

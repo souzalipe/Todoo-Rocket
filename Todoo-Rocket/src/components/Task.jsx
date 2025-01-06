@@ -3,7 +3,7 @@ import style from "../styles/task.module.css";
 
 import { Trash } from "phosphor-react";
 
-export function Task({ id , content, completed }) {
+export function Task({ content, completed }) {
   return (
     <div className={style.conteiner}>
       <div className={style.content}>
