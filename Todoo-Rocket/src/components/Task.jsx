@@ -3,7 +3,13 @@ import style from "../styles/task.module.css";
 
 import { Trash } from "phosphor-react";
 
-export function Task({ content, completed }) {
+export function Task({ content, completed, deleteTask }) {
+  function handleDeleteTask() {
+    
+
+    deleteTask(content);
+  }
+
   return (
     <div className={style.conteiner}>
       <div className={style.content}>
@@ -11,7 +17,7 @@ export function Task({ content, completed }) {
         <p>
           {content}
         </p>
-        <button >
+        <button onClick={handleDeleteTask}>
           <Trash
             className={style.button}
             size={12}

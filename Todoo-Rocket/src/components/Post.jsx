@@ -23,6 +23,10 @@ export function Post({id}) {
     setNewCommentText(event.target.value);
   }
 
+  function deleteTask(tasks) {
+    console.log(`Comentário deletado ${tasks}`);
+  }
+
   return (
     <article>
       <form onSubmit={handleCreateNewTask}>
@@ -62,7 +66,7 @@ export function Post({id}) {
       <section>
         <div key={id}>
           {tasks.map((task, key ) => (
-            <Task key={key} content={task} />
+            <Task key={key} content={task}  deleteTask={deleteTask}/>
           ))}
         </div>
       </section>
