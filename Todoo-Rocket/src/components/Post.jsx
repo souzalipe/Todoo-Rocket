@@ -11,7 +11,7 @@ export function Post({ id }) {
 
   const [tasks, setTaks] = useState(["Estudar Matemática"]);
 
-  const [newCommentText, setNewCommentText] = useState("");
+  const [newCommentText, setNewCommentText] = useState(""); /* <== Estado do input */
 
   function handleCreateNewTask() {
     event.preventDefault(); /*  <== Evita que a página recarregue ao enviar o formulário */
@@ -20,6 +20,7 @@ export function Post({ id }) {
   }
 
   function handleNewTaskChange() {
+    event.target.setCustomValidity("");
     setNewCommentText(event.target.value);
   }
 
@@ -29,6 +30,10 @@ export function Post({ id }) {
     })
 
     setTaks(taskWithoutDeletedOne)
+  }
+
+  function handleNewTaskInvalid() {
+    event.target.setCustomValidity("Por favor, preencha este campo.");
   }
 
   return (
@@ -52,8 +57,10 @@ export function Post({ id }) {
             placeholder="Adicione uma nova tarefa"
             onChange={handleNewTaskChange}
             maxLength={30}
+            onInvalid={handleNewTaskInvalid}
+            required
           />
-          <Button />
+          <Button  />
         </div>
       </form>
 
