@@ -3,11 +3,9 @@ import style from "../styles/task.module.css";
 
 import { Trash } from "phosphor-react";
 
-export function Task({ content, completed, deleteTask }) {
+export function Task({ content, completed, onDeleteTask }) {
   function handleDeleteTask() {
-    
-
-    deleteTask(content);
+    onDeleteTask(content);
   }
 
   return (

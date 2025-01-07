@@ -7,7 +7,7 @@ import style from "../styles/Post.module.css";
 import styles from "../styles/Input.module.css";
 
 
-export function Post({id}) {
+export function Post({ id }) {
 
   const [tasks, setTaks] = useState(["Estudar Matemática"]);
 
@@ -23,8 +23,12 @@ export function Post({id}) {
     setNewCommentText(event.target.value);
   }
 
-  function deleteTask(tasks) {
-    console.log(`Comentário deletado ${tasks}`);
+  function deleteTask(tasksToDeleted) {
+    const taskWithoutDeletedOne = tasks.filter(tasks => {
+      return tasks !== tasksToDeleted;
+    })
+
+    setTaks(taskWithoutDeletedOne)
   }
 
   return (
@@ -47,6 +51,7 @@ export function Post({id}) {
             className={styles.container}
             placeholder="Adicione uma nova tarefa"
             onChange={handleNewTaskChange}
+            maxLength={30}
           />
           <Button />
         </div>
@@ -65,8 +70,12 @@ export function Post({id}) {
       </header>
       <section>
         <div key={id}>
-          {tasks.map((task, key ) => (
-            <Task key={key} content={task}  deleteTask={deleteTask}/>
+          {tasks.map((task, key) => (
+            <Task
+              key={key}
+              content={task}
+              onDeleteTask={deleteTask}
+            />
           ))}
         </div>
       </section>
