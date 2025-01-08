@@ -13,10 +13,6 @@ export function Task({ content, completed, onDeleteTask }) {
 
   function handleOnChange() {
     setIsChecked(!isChecked)
-    if(isChecked === false) {
-      console.log("Aoiii")
-    }
-    console.log(isChecked)
   }
 
  
