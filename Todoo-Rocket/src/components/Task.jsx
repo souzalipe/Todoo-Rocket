@@ -3,9 +3,10 @@ import style from "../styles/task.module.css";
 
 import { Trash } from "phosphor-react";
 
-export function Task({ content, completed, onDeleteTask }) {
+export function Task({ content, onDeleteTask }) {
 
   const [isChecked, setIsChecked ] = useState(false)
+  const [taskCount, setTaskCount] = useState([])
 
   function handleDeleteTask() {
     onDeleteTask(content);
@@ -13,6 +14,10 @@ export function Task({ content, completed, onDeleteTask }) {
 
   function handleOnChange() {
     setIsChecked(!isChecked)
+    if(!isChecked === false) {
+      taskCount.push(taskCount.length)
+    }
+    setTaskCount([taskCount])
   }
 
  

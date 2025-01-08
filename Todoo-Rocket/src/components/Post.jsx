@@ -7,7 +7,7 @@ import style from "../styles/Post.module.css";
 import styles from "../styles/Input.module.css";
 
 
-export function Post({ id , value }) {
+export function Post({ id , taskCount}) {
 
   const [tasks, setTaks] = useState(["Estudar Matemática"]);
 
@@ -73,7 +73,10 @@ export function Post({ id , value }) {
           </div>
 
           <div className={style.completedTaskContainer}>
-            <h3>Concluídas</h3>
+            {/* <h3>Concluídas</h3>
+            <div className={style.taskCounter}>
+             {`${tasks.length} de ${taskCount}`}
+            </div> */}
           </div>
         </div>
       </header>
