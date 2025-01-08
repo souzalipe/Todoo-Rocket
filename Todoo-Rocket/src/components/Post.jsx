@@ -7,7 +7,7 @@ import style from "../styles/Post.module.css";
 import styles from "../styles/Input.module.css";
 
 
-export function Post({ id , taskCount}) {
+export function Post({ id }) {
 
   const [tasks, setTaks] = useState(["Estudar Matemática"]);
 
