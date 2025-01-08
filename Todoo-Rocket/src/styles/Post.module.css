@@ -6,8 +6,22 @@
 
 .createdTaskContainer {
     gap: 1rem;
+    display: flex;
     color: var(--purple);
 } 
+
+.taskCounter {
+  height: 19px;
+  width: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  padding: 8px;
+  border-radius: 18px;
+  color: var(--gray-200);
+  background: var(--gray-400);
+}
 
 .completedTaskContainer {
   gap: 1rem;

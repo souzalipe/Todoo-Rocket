@@ -67,6 +67,9 @@ export function Post({ id , value }) {
         <div className={style.header}>
           <div className={style.createdTaskContainer}>
             <h3>Tarefas criadas</h3>
+            <div className={style.taskCounter}>
+             {tasks.length}
+            </div>
           </div>
 
           <div className={style.completedTaskContainer}>
