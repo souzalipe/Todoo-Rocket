@@ -7,7 +7,7 @@ import style from "../styles/Post.module.css";
 import styles from "../styles/Input.module.css";
 
 
-export function Post({ id }) {
+export function Post({ id , value }) {
 
   const [tasks, setTaks] = useState(["Estudar Matemática"]);
 
@@ -35,6 +35,7 @@ export function Post({ id }) {
   function handleNewTaskInvalid() {
     event.target.setCustomValidity("Por favor, preencha este campo.");
   }
+  
 
   return (
     <article>
@@ -50,9 +51,7 @@ export function Post({ id }) {
           {/* <Input /> */}
           <input
             name="input"
-            value={
-              newCommentText
-            } /*<== o valor do input é controlado pelo estado */
+            value={newCommentText} /*<== o valor do input é controlado pelo estado */
             className={styles.container}
             placeholder="Adicione uma nova tarefa"
             onChange={handleNewTaskChange}
