@@ -16,7 +16,7 @@ export function Post({ id }) {
   function handleCreateNewTask() {
     event.preventDefault(); /*  <== Evita que a página recarregue ao enviar o formulário */
     setTaks([...tasks, newCommentText]); /* <== Imutabilidade */
-    setNewCommentText(""); /* <== Limpa o input */
+    setNewCommentText(""); /* <== Limpa o input*/
   }
 
   function handleNewTaskChange() {
